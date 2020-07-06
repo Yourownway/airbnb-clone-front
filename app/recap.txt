@@ -1,0 +1,12 @@
+// Project init 
+
+
+
+- Ajouter le proxy  dans la package json à l’intérieur de  ( browser list)
+- Installer ES7  React pour raccourci  
+- installer axios  pour  faire des fetch plus simple.(npm i axios)
+- Création du dossier components 
+- installer : ReactDom , React router dom
+
+
+Source vidéo : 
