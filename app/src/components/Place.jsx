@@ -20,7 +20,7 @@ export default function OnePlace() {
   return (
     <div>
       <h2>{place.name}</h2>
-      <h3> Location : {place['City.name']}</h3>
+      <h3> Location : {place.city}</h3>
       <p> Description : {place.description}</p>
       <p> Rooms : {place.rooms}</p>
       <p> Bathrooms :{place.bathrooms}</p>
