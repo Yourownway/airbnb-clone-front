@@ -11,6 +11,9 @@ export default function Nav() {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/places">Places</Link>
+          </li>
+          <li>
             <Link to="/signup">Signup</Link>
           </li>
           <li>
