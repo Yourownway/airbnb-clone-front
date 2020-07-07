@@ -12,15 +12,16 @@ export default function Home() {
     };
     fetchData();
   }, []);
-  console.log('Console.log de places', places);
+
+  console.log('Console.log de places : ', places);
 
   return (
     <div>
       {places.map((place) => (
         <>
-          <h2 key={place.id}>{place.name}</h2>
+          <h2>{place.name}</h2>
           <h3> Location :{place['City.name']}</h3>
-          <p dangerouslySetInnerHTML={{ __html: place.description }} />
+          <p> Description :{place.description} </p>
           <p> Rooms :{place.rooms}</p>
           <p> Bathrooms :{place.bathrooms}</p>
           <p> Max guests :{place.maxGuests}</p>

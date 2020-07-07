@@ -1,9 +1,10 @@
 import React from 'react';
+import Nav from './Nav';
 
 export default function Header() {
   return (
     <div>
-      <h2>Je suis le header</h2>
+      <Nav />
     </div>
   );
 }
