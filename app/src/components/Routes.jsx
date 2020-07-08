@@ -4,6 +4,7 @@ import Connexion from './Connexion';
 import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
+import Maintenance from './Maintenance';
 
 export default function Routes() {
   return (
@@ -16,6 +17,9 @@ export default function Routes() {
       </Route>
       <Route path="/places/:id">
         <Place />
+      </Route>
+      <Route path="/maintenance">
+        <Maintenance />
       </Route>
       <Route path="/">
         <Places />
