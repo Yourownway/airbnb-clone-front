@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
@@ -21,6 +22,7 @@ export default function Places() {
     <div>
       {places.map((place) => (
         <>
+          <img src={place.photos} alt="Une photo de mon appartement" />
           <h2>{place.name}</h2>
           <h3> Location : {place['City.name']}</h3>
           <p> Description : {place.description} </p>

@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 
-export default function OnePlace() {
+export default function Place() {
   const [place, setPlace] = useState([]);
   const { id } = useParams();
 
@@ -21,6 +22,7 @@ export default function OnePlace() {
 
   return (
     <div>
+      <img src={place.photos} alt="Une photo de mon appartement" />
       <h2>{place.name}</h2>
       <h3> Location : {place.city}</h3>
       <p> Description : {place.description}</p>
