@@ -21,16 +21,47 @@ export default function Place() {
   console.log('console log de place :', place);
 
   return (
-    <div className="container">
-      <img className="placeIllustration" src={place.photos} alt="Une photo de mon appartement" />
-      <h2>{place.name}</h2>
-      <h3> Location : {place.city}</h3>
-      <p> Description : {place.description}</p>
-      <p> Rooms : {place.rooms}</p>
-      <p> Bathrooms : {place.bathrooms}</p>
-      <p> Max guests : {place.maxGuests}</p>
-      <p> Price by night : {place.priceByNight} $</p>
-      <Link to="/places">Retour</Link>
+    <div>
+      <div className="place_retour">
+        <div className="place_arrow">
+          <Link to="/places">
+            <span>&#8249;</span>
+            <p>
+              {' '}
+              Places <span> &#8226; </span> Airbnb
+            </p>
+          </Link>
+        </div>
+        <div className="place_heart">
+          {' '}
+          <span>&#9829;</span>
+        </div>
+      </div>
+      <img className="place_illustration" src={place.photos} alt="Une photo de mon appartement" />
+      <div className="container">
+        <div className="place">
+          <div className="place_name-location">
+            <h2>{place.name}</h2>
+            <h3>{place.city}</h3>
+          </div>
+
+          <div className="place_description">
+            <p> {place.description}</p>
+          </div>
+
+          <div className="place_infos">
+            <p>
+              {place.maxGuests} max guest <span> &#8226; </span>
+              {place.rooms} room <span> &#8226; </span>
+              {place.bathrooms} bathroom
+            </p>
+          </div>
+
+          <div className="place_price">
+            <p>{place.priceByNight}$/ night</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

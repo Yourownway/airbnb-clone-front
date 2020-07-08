@@ -1,0 +1,60 @@
+.place {
+  width: 100%;
+  height: 100%;
+  &_illustration {
+    width: 100vw !important;
+  }
+  &_retour {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100vw;
+    padding: 0 5%;
+    p {
+      font-size: 10px;
+      width: 20vw;
+      margin-left: 5%;
+    }
+  }
+  &_arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2% 0;
+    span {
+      margin: 0 2%;
+    }
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &_name-location {
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    h3 {
+      font-size: 10px;
+      font-weight: 500;
+      color: gray;
+    }
+    border-bottom: 1px solid rgb(195, 195, 195);
+  }
+  &_description {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  &_infos {
+    font-size: 12px;
+  }
+  &_price {
+    font-size: 12px;
+  }
+}

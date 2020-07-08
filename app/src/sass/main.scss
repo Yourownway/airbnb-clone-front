@@ -1,7 +1,24 @@
 html {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  line-height: 1.75;
 }
 
 .container {
+  width: 100vw;
   padding: 5%;
+  display: flex;
+  flex-direction: column;
+
+  @include media(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2%;
+  }
+  @include media(desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1vw;
+  }
 }

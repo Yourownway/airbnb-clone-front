@@ -16,26 +16,33 @@ export default function Places() {
     fetchData();
   }, []);
 
-  console.log('Console.log de places : ', places);
+  console.log('Console.log que je veux ! : ', places);
 
   return (
-    <div className="container">
+    <div className="container container_tablet">
       {places.map((place) => (
         <>
           <div className="places">
-            <img
-              className="places_illustration"
-              src={place.photos}
-              alt="Une photo de mon appartement"
-            />
-            <h2>{place.name}</h2>
-            <h3> Location : {place['City.name']}</h3>
-            <p> Description : {place.description} </p>
-            <p> Rooms : {place.rooms}</p>
-            <p> Bathrooms : {place.bathrooms}</p>
-            <p> Max guests : {place.maxGuests}</p>
-            <p> Price by night : {place.priceByNight} $</p>
-            <Link to={`/places/${place.id}`}>En savoir +</Link>
+            <Link to={`/places/${place.id}`}>
+              <img
+                className="places_illustration"
+                src={place.photos}
+                alt="Une photo de mon appartement"
+              />
+              <div className="places_description">
+                <h2>
+                  {place['City.name']} <span> &#8226; </span> {place.name}
+                </h2>
+                <p>
+                  {place.maxGuests} voyageur <span> &#8226; </span>
+                  {place.rooms} chambre <span> &#8226; </span>
+                  {place.bathrooms} salle de bain
+                </p>
+                <p>
+                  <b>{place.priceByNight} €</b> / nuit
+                </p>
+              </div>
+            </Link>
           </div>
         </>
       ))}
