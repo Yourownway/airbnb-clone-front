@@ -6,16 +6,22 @@ export default function Nav() {
     <div>
       <nav>
         <div>
-          <img src="" alt="" />
-          <Link to="/">Explorer</Link>
+          <Link to="/">
+            <img src="airbnb.png" alt="" />
+            <h3>Explorer</h3>
+          </Link>
         </div>
         <div>
-          <img src="" alt="" />
-          <Link to="/enregistres">Enregistrés</Link>
+          <Link to="/enregistres">
+            <img src="heart.png" alt="" />
+            <h3>Enregistrés</h3>
+          </Link>
         </div>
         <div>
-          <img src="" alt="" />
-          <Link to="/connexion">Connexion</Link>
+          <Link to="/connexion">
+            <img src="user.png" alt="" />
+            <h3>Connexion</h3>
+          </Link>
         </div>
       </nav>
     </div>

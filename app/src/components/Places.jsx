@@ -19,18 +19,20 @@ export default function Places() {
   console.log('Console.log de places : ', places);
 
   return (
-    <div>
+    <div className="container">
       {places.map((place) => (
         <>
-          <img src={place.photos} alt="Une photo de mon appartement" />
-          <h2>{place.name}</h2>
-          <h3> Location : {place['City.name']}</h3>
-          <p> Description : {place.description} </p>
-          <p> Rooms : {place.rooms}</p>
-          <p> Bathrooms : {place.bathrooms}</p>
-          <p> Max guests : {place.maxGuests}</p>
-          <p> Price by night : {place.priceByNight} $</p>
-          <Link to={`/places/${place.id}`}>En savoir +</Link>
+          <div>
+            <img src={place.photos} alt="Une photo de mon appartement" />
+            <h2>{place.name}</h2>
+            <h3> Location : {place['City.name']}</h3>
+            <p> Description : {place.description} </p>
+            <p> Rooms : {place.rooms}</p>
+            <p> Bathrooms : {place.bathrooms}</p>
+            <p> Max guests : {place.maxGuests}</p>
+            <p> Price by night : {place.priceByNight} $</p>
+            <Link to={`/places/${place.id}`}>En savoir +</Link>
+          </div>
         </>
       ))}
     </div>
