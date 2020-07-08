@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10vh;
+  font-size: 13px;
+  line-height: 2.25;
+  background-color: #f7f7f7;
+
+  &_sections {
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    border-top: 1px solid rgb(226, 226, 226);
+    h5 {
+      font-weight: 600;
+    }
+    a {
+      color: rgb(104, 104, 104);
+    }
+    &_langueDevise {
+      display: flex;
+      div {
+        padding-right: 7.5%;
+      }
+    }
+
+    &_copyright {
+      color: rgb(104, 104, 104);
+    }
+  }
+}
