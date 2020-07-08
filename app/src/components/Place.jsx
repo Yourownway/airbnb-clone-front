@@ -21,8 +21,8 @@ export default function Place() {
   console.log('console log de place :', place);
 
   return (
-    <div>
-      <img src={place.photos} alt="Une photo de mon appartement" />
+    <div className="container">
+      <img className="placeIllustration" src={place.photos} alt="Une photo de mon appartement" />
       <h2>{place.name}</h2>
       <h3> Location : {place.city}</h3>
       <p> Description : {place.description}</p>

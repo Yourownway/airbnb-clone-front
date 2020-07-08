@@ -22,8 +22,12 @@ export default function Places() {
     <div className="container">
       {places.map((place) => (
         <>
-          <div>
-            <img src={place.photos} alt="Une photo de mon appartement" />
+          <div className="places">
+            <img
+              className="places_illustration"
+              src={place.photos}
+              alt="Une photo de mon appartement"
+            />
             <h2>{place.name}</h2>
             <h3> Location : {place['City.name']}</h3>
             <p> Description : {place.description} </p>
