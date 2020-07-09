@@ -21,7 +21,7 @@ export default function Place() {
   console.log('console log de place :', place);
 
   return (
-    <div>
+    <div className="place">
       <div className="place_retour">
         <div className="place_arrow">
           <Link to="/places">
@@ -39,26 +39,26 @@ export default function Place() {
       </div>
       <img className="place_illustration" src={place.photos} alt="Une photo de mon appartement" />
       <div className="container">
-        <div className="place">
-          <div className="place_name-location">
-            <h2>{place.name}</h2>
+        <div className="container_name-location">
+          <h2>{place.name}</h2>
+          <Link to="#">
             <h3>{place.city}</h3>
-          </div>
-
-          <div className="place_description">
+          </Link>
+        </div>
+        <div className="main-container">
+          <div className="main-container_description">
             <p> {place.description}</p>
-          </div>
-
-          <div className="place_infos">
             <p>
               {place.maxGuests} max guest <span> &#8226; </span>
               {place.rooms} room <span> &#8226; </span>
               {place.bathrooms} bathroom
             </p>
           </div>
-
-          <div className="place_price">
-            <p>{place.priceByNight}$/ night</p>
+          <div className="main-container_priceByNight">
+            <p>
+              <span>{place.priceByNight}$</span>/ night
+            </p>
+            <button>réserver</button>
           </div>
         </div>
       </div>
