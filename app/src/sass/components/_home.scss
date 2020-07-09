@@ -1,0 +1,107 @@
+.Home {
+  &_header {
+    padding: 2.5% 7.5%;
+    text-align: center;
+    background-color: #f5f5f5;
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+
+  &_search {
+    width: 100vw;
+    padding: 3% 5%;
+    input {
+      outline: none;
+      border-radius: 25px;
+      border: none;
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &_offre {
+    padding: 2.5% 5%;
+    h2 {
+      font-size: 32px;
+      line-height: 1.1;
+      font-weight: 300;
+      color: rgb(133, 3, 3);
+      padding: 0 0 5%;
+    }
+    &_container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+    &_card {
+      flex: 0 0 auto;
+      width: 275px;
+      margin-right: 10px;
+      border-radius: 15px;
+      border: 1px solid rgb(196, 196, 196);
+
+      img {
+        border-radius: 15px 15px 0 0;
+      }
+      &_text {
+        padding: 0% 7.5% 7.5%;
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &_experiences {
+    padding: 5% 5% 10% 5%;
+    background-color: black;
+    color: white;
+
+    h2 {
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 400;
+      padding: 0 0 5%;
+    }
+
+    p {
+      line-height: 1.3;
+      padding: 0 0 5%;
+      font-weight: lighter;
+    }
+
+    &_container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    &_card {
+      flex: 0 0 auto;
+      width: 375px;
+      margin-left: 20px;
+      border-radius: 15px;
+      background-color: rgb(49, 49, 49);
+
+      img {
+        width: 100%;
+        height: 425px;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+      }
+
+      &_text {
+        padding: 0% 7.5% 5%;
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

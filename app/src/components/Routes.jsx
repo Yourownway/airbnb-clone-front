@@ -5,6 +5,7 @@ import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
+import Home from './Home';
 
 export default function Routes() {
   return (
@@ -21,8 +22,11 @@ export default function Routes() {
       <Route path="/maintenance">
         <Maintenance />
       </Route>
-      <Route path="/">
+      <Route path="/places">
         <Places />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   );

@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <nav>
       <div>
-        <Link to="/">
+        <Link to="/places">
           <img src="airbnb.png" alt="" />
           <h3>Explorer</h3>
         </Link>
