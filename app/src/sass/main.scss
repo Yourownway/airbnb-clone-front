@@ -12,11 +12,11 @@ html {
   @include media(tablet) {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10vh 1% 0;
+    padding: 9vh 1% 0;
   }
   @include media(desktop) {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10vh 1% 0;
+    padding: 9vh 1% 0;
   }
 }
