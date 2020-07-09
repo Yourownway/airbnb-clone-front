@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Places() {
+export default function PlacesMap() {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {

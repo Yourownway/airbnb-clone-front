@@ -5,6 +5,7 @@ import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
+import Map from './SimpleMap';
 import Home from './Home';
 
 export default function Routes() {
@@ -21,6 +22,9 @@ export default function Routes() {
       </Route>
       <Route path="/maintenance">
         <Maintenance />
+      </Route>
+      <Route path="/map">
+        <Map />
       </Route>
       <Route path="/places">
         <Places />
