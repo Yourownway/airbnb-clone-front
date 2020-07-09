@@ -50,7 +50,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_test Nav_test_inscriptionBtn">
-          <Link to="/connexion">
+          <Link to="/maintenance">
             <h3>Inscription</h3>
           </Link>
         </div>
