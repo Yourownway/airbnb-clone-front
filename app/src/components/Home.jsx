@@ -11,6 +11,7 @@ export default function Home() {
       </div>
       <div className="Home_search">
         <input type="search" name="" id="" placeholder="Où allez-vous ?" />
+        <button type="submit">Rechercher</button>
       </div>
       <div className="Home_offre">
         <h2>Inutile de s'éloigner loin pour trouver ce qui compte.</h2>

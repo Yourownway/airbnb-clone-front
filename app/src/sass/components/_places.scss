@@ -52,6 +52,16 @@
       font-weight: 500;
       overflow: hidden;
       white-space: nowrap;
+      @include media(tablet) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      @include media(tablet) {
+        font-size: 14px;
+        color: gray;
+      }
     }
   }
 }

@@ -40,7 +40,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_test">
-          <Link to="/maintenance">
+          <Link to="/places">
             <h3>Aide</h3>
           </Link>
         </div>

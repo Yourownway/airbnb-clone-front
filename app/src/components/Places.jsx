@@ -3,8 +3,8 @@
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import GoogleMap from './SimpleMap';
 import { Link } from 'react-router-dom';
+import GoogleMap from './GoogleMap';
 
 export default function PlacesMap() {
   const [places, setPlaces] = useState([]);

@@ -5,7 +5,7 @@ import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
-import Map from './SimpleMap';
+import Map from './GoogleMap';
 import Home from './Home';
 
 export default function Routes() {
