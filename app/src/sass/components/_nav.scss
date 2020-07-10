@@ -43,7 +43,7 @@
     }
   }
 
-  &_test {
+  &_noSmartphone {
     display: none !important;
     @include media(tablet) {
       display: flex !important;

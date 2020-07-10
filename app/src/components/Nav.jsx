@@ -29,27 +29,27 @@ export default function Nav() {
           </Link>
         </div>
 
-        <div className="Nav_test">
+        <div className="Nav_noSmartphone">
           <Link to="/maintenance">
             <h3>Héberger des voyageurs</h3>
           </Link>
         </div>
-        <div className="Nav_test">
+        <div className="Nav_noSmartphone">
           <Link to="/maintenance">
             <h3>Créer une expérience</h3>
           </Link>
         </div>
-        <div className="Nav_test">
+        <div className="Nav_noSmartphone">
           <Link to="/places">
             <h3>Aide</h3>
           </Link>
         </div>
-        <div className="Nav_test">
+        <div className="Nav_noSmartphone">
           <Link to="/connexion">
             <h3>Connexion</h3>
           </Link>
         </div>
-        <div className="Nav_test Nav_test_inscriptionBtn">
+        <div className="Nav_noSmartphone Nav_noSmartphone_inscriptionBtn">
           <Link to="/maintenance">
             <h3>Inscription</h3>
           </Link>
