@@ -2,8 +2,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import GoogleMap from './GoogleMap';
 
 export default function PlacesMap() {
