@@ -5,7 +5,6 @@ import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
-import Map from './GoogleMap';
 import Home from './Home';
 
 export default function Routes() {
@@ -20,14 +19,11 @@ export default function Routes() {
       <Route path="/places/:id">
         <Place />
       </Route>
-      <Route path="/maintenance">
-        <Maintenance />
-      </Route>
-      <Route path="/map">
-        <Map />
-      </Route>
       <Route path="/places">
         <Places />
+      </Route>
+      <Route path="/maintenance">
+        <Maintenance />
       </Route>
       <Route path="/">
         <Home />

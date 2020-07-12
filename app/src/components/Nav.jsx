@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Search from './Search';
+import ContextRecherche from './Context';
 
 export default function Nav() {
+  const context = useContext(ContextRecherche);
+
+  const search = (searchValue) => {
+    context.setRecherche(searchValue);
+  };
+
   return (
     <nav className="Nav">
       <Link className="Nav_container_logo" to="/">
         <img src="logo_airbnb.svg" alt="Logo de airbnb" />
       </Link>
+
       <div className="Nav_container_links">
         <div className="Nav_link">
-          <Link to="/places">
+          <Link to="/places" onClick={() => context.setRecherche('')}>
             <img src="airbnb.png" alt="" />
             <h3>Explorer</h3>
           </Link>
@@ -40,7 +49,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_noSmartphone">
-          <Link to="/places">
+          <Link to="/places" onClick={() => context.setRecherche('')}>
             <h3>Aide</h3>
           </Link>
         </div>
@@ -55,6 +64,7 @@ export default function Nav() {
           </Link>
         </div>
       </div>
+      <Search search={search} />
     </nav>
   );
 }

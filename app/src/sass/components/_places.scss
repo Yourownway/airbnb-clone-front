@@ -1,6 +1,9 @@
 .container {
+  margin: 9vh 0 0;
   @include media(desktop) {
     width: 65vw;
+    min-height: 100vh;
+    margin: 10vh 0;
   }
 }
 
