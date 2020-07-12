@@ -90,8 +90,20 @@
         border: none;
         outline: none;
         cursor: pointer;
-        width: 35%;
+        width: 40%;
         border-left: 1px solid rgb(216, 216, 216);
+        &::before {
+          content: attr(placeholder) '';
+          white-space: pre;
+          font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+            sans-serif;
+          text-overflow: ellipsis;
+        }
+        &:focus::before {
+          font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+            sans-serif;
+          content: ' ' !important;
+        }
       }
     }
 
@@ -104,7 +116,7 @@
         border: none;
         outline: none;
         cursor: pointer;
-        width: 30%;
+        width: 40%;
         border-left: 1px solid rgb(216, 216, 216);
         text-overflow: ellipsis;
       }
