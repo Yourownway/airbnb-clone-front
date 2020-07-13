@@ -31,17 +31,18 @@
     background-color: #fff;
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     position: fixed;
     padding: 1%;
     top: 0;
 
     @include media(tablet) {
-      width: 100%;
+      width: 90%;
       position: relative;
       flex-direction: row;
       justify-content: center;
-      margin: 0 80px 20px;
+      margin: 0 5%;
       border-radius: 10px;
       border: 1px solid rgb(216, 216, 216);
       padding: 0.75%;
@@ -59,7 +60,7 @@
 
       @include media(tablet) {
         z-index: 1;
-        width: 100%;
+        width: 55%;
         margin: 0;
         height: 50px;
         box-shadow: none;
@@ -90,7 +91,7 @@
         border: none;
         outline: none;
         cursor: pointer;
-        width: 40%;
+        width: 15%;
         border-left: 1px solid rgb(216, 216, 216);
         &::before {
           content: attr(placeholder) '';
@@ -116,7 +117,7 @@
         border: none;
         outline: none;
         cursor: pointer;
-        width: 40%;
+        width: 15%;
         border-left: 1px solid rgb(216, 216, 216);
         text-overflow: ellipsis;
       }

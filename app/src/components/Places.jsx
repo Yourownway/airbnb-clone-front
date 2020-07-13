@@ -10,7 +10,6 @@ import GoogleMap from './GoogleMap';
 export default function Places() {
   const [places, setPlaces] = useState([]);
   const context = useContext(ContextRecherche);
-
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(`/api/places?city=${context.recherche}`);
