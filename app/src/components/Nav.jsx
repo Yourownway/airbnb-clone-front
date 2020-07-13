@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 import ContextRecherche from './Context';
 import ModalSignup from './ModalSignup';
+import ModalSignin from './ModalSignin';
 
 export default function Nav() {
   const context = useContext(ContextRecherche);
@@ -37,6 +38,7 @@ export default function Nav() {
             <img src="user.png" alt="" />
             <h3>Connexion</h3>
           </Link>
+          {/* <ModalSignin /> */}
         </div>
 
         <div className="Nav_noSmartphone">
@@ -55,9 +57,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_noSmartphone">
-          <Link to="/connexion">
-            <h3>Connexion</h3>
-          </Link>
+          <ModalSignin />
         </div>
         <div className="Nav_noSmartphone Nav_noSmartphone_inscriptionBtn">
           <ModalSignup />

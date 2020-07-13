@@ -9,6 +9,7 @@
     outline: none;
     background-color: inherit;
     color: inherit;
+    font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
     cursor: pointer;
@@ -32,15 +33,23 @@
       text-align: center;
       border-radius: 7.5px 7.5px 0 0;
       border-bottom: 1px solid grey;
+      h1 {
+        font-weight: 600;
+      }
     }
 
     &_form {
       display: column;
-      padding: 10% 5%;
+      padding: 7.5% 5%;
 
       input {
         width: 100%;
         padding: 15px;
+      }
+
+      p {
+        margin-top: 12px;
+        font-size: 12px;
       }
 
       button {
@@ -55,6 +64,29 @@
         border-radius: 10px;
         cursor: pointer;
         outline: none;
+      }
+    }
+
+    &_radio {
+      width: 100%;
+      font-size: 13px;
+      color: grey;
+      display: flex;
+      &_button {
+        padding: 12px 17px;
+        border: 1px solid grey;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        label {
+          cursor: pointer;
+          text-align: center;
+        }
+        input[type='radio'] {
+          opacity: 0.1;
+          cursor: pointer;
+        }
       }
     }
   }
