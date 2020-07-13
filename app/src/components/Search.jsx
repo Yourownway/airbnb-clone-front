@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Search = (props) => {
   const [searchValue, setSearchValue] = useState('');
@@ -12,10 +13,12 @@ const Search = (props) => {
     setSearchValue('');
   };
 
+  const history = useHistory();
   const callSearchFunction = (e) => {
     e.preventDefault();
     props.search(searchValue);
     resetInputField();
+    history.push('/places');
   };
 
   return (
