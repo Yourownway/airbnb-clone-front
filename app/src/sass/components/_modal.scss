@@ -1,0 +1,49 @@
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_container {
+    background: #fff;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 7.5px;
+    overflow-y: scroll;
+
+    @include media(tablet) {
+      width: 50vw;
+    }
+
+    &_header {
+      width: 100%;
+      padding: 2.5%;
+      text-align: center;
+      border-radius: 7.5px 7.5px 0 0;
+      border-bottom: 1px solid grey;
+    }
+
+    &_form {
+      display: column;
+      padding: 10% 5%;
+
+      input {
+        width: 100%;
+        padding: 15px;
+      }
+
+      button {
+        margin-top: 12px;
+        width: 100%;
+        padding: 12px;
+        background-color: #e31d5e;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+}
