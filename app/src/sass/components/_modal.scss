@@ -3,15 +3,27 @@
   justify-content: center;
   align-items: center;
 
+  &_button {
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
   &_container {
     background: #fff;
     width: 90vw;
     height: 90vh;
-    border-radius: 7.5px;
+    border-radius: 10px;
     overflow-y: scroll;
 
     @include media(tablet) {
-      width: 50vw;
+      width: 45vw;
     }
 
     &_header {

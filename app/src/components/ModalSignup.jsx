@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '@material-ui/core/Modal';
 
-export default function Connexion() {
+export default function ModalSignup() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -13,9 +13,9 @@ export default function Connexion() {
   };
 
   return (
-    <div className="maintenance">
-      <button type="button" onClick={handleOpen}>
-        Open Modal
+    <div>
+      <button className="Modal_button" type="button" onClick={handleOpen}>
+        Inscription
       </button>
       <Modal
         open={open}
@@ -29,10 +29,10 @@ export default function Connexion() {
             <h1>Inscription</h1>
           </div>
           <form className="Modal_container_form">
-            <input type="text" name="" id="" placeholder="Nom" />
-            <input type="text" name="" id="" placeholder="Prénom" />
-            <input type="email" name="" id="" placeholder="Email" />
-            <input type="password" name="" id="" placeholder="Mot de passe" />
+            <input type="text" name="firstName" id="firstName" placeholder="Nom" />
+            <input type="text" name="lastName" id="lastName" placeholder="Prénom" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="password" name="password" id="password" placeholder="Mot de passe" />
             <button type="submit">Continuer</button>
           </form>
         </div>

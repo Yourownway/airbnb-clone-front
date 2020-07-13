@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import ContextRecherche from './Context';
+import ModalSignup from './ModalSignup';
 
 export default function Nav() {
   const context = useContext(ContextRecherche);
@@ -59,9 +60,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_noSmartphone Nav_noSmartphone_inscriptionBtn">
-          <Link to="/maintenance">
-            <h3>Inscription</h3>
-          </Link>
+          <ModalSignup />
         </div>
       </div>
       <Search search={search} />
