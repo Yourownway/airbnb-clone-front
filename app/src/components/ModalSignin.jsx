@@ -32,20 +32,27 @@ export default function ModalSignin() {
     alert('Tu es bien connecté !');
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    axios
-      .post('/api/signin', connexion)
-      .then((res) => {
-        console.log('this is the res', connexion);
-        console.log('this is the data', res.data.token);
-        message();
-      })
-      .catch((error) => {
-        console.log('this is not workind dude', error);
-      });
+    await axios.post('/api/signin', connexion);
+    message();
   };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   axios
+  //     .post('/api/signin', connexion)
+  //     .then((res) => {
+  //       console.log('this is the res', connexion);
+  //       console.log('this is the data', res.data.token);
+  //       message();
+  //       on;
+  //     })
+  //     .catch((error) => {
+  //       console.log('this is not workind dude', error);
+  //     });
+  // };
 
   return (
     <div>

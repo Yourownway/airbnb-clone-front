@@ -36,18 +36,24 @@ export default function ModalSignup() {
     alert('Tu es bien inscrit !');
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios
-      .post('/api/signup', user)
-      .then((res) => {
-        console.log('this is the res', user);
-        message();
-      })
-      .catch((error) => {
-        console.log('this is not workind dude', error);
-      });
+    await axios.post('/api/signup', user);
+    message();
   };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   axios
+  //     .post('/api/signup', user)
+  //     .then((res) => {
+  //       console.log('this is the res', user);
+  //       message();
+  //     })
+  //     .catch((error) => {
+  //       console.log('this is not workind dude', error);
+  //     });
+  // };
 
   return (
     <div>
