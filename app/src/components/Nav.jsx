@@ -35,7 +35,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_noSmartphone">
-          <Link to="/maintenance">
+          <Link to="/addplace">
             <h3>Créer une expérience</h3>
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function Nav() {
           </Link>
         </div>
         <div className="Nav_noSmartphone Nav_noSmartphone_inscriptionBtn">
-          <Link to="/maintenance">
+          <Link to="/inscription">
             <h3>Inscription</h3>
           </Link>
         </div>

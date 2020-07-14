@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class Connexion extends React.Component {
+class Inscription extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       checked: true,
+      role: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
     };
@@ -28,10 +31,9 @@ class Connexion extends React.Component {
     console.log(this.state);
 
     axios
-      .post('/api/signin', this.state)
+      .post('/api/signup', this.state)
       .then((res) => {
         console.log('this is the res', res);
-        console.log('this is the data', res.data.token);
       })
       .catch((error) => {
         console.log('this is not workind dude', error);
@@ -53,12 +55,53 @@ class Connexion extends React.Component {
   }
 
   render() {
-    const { email, password } = this.state;
+    const { role, firstName, lastName, email, password } = this.state;
     return (
       <div className="container">
-        <div className="connexion">
-          <h2>CONNEXION</h2>
+        <div className="inscription">
+          <h2>INSCRIPTION</h2>
           <form action="POST" className="addPlace_form" onSubmit={this.handleSubmit}>
+            <p>Rôle:</p>
+            <div className="inscription_radio">
+              <label htmlFor="role">Hôte</label>
+              <input
+                type="radio"
+                checked={role}
+                id="role"
+                name="role"
+                value="host"
+                onChange={this.handleChange}
+                checked={this.selectedOption === 'host'}
+              />
+              <label htmlFor="role">Voyageur</label>
+              <input
+                type="radio"
+                checked={role}
+                id="role"
+                name="role"
+                value="tourist"
+                onChange={this.handleChange}
+                checked={this.selectedOption === 'tourist'}
+              />
+            </div>
+            <label htmlFor="firstName">Prénom</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={firstName}
+              onChange={this.handleChange}
+            />
+
+            <label htmlFor="lastName">Nom</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={lastName}
+              onChange={this.handleChange}
+            />
+
             <label htmlFor="email">Adresse e-mail</label>
             <input
               type="email"
@@ -80,6 +123,7 @@ class Connexion extends React.Component {
             <input type="submit" value="Envoyer" id="btn" />
             {JSON.stringify(this.state)}
           </form>
+
           {/* <Link to="/">
             <span> &#8249; </span>
             Revenir à la page d'accueil
@@ -90,4 +134,4 @@ class Connexion extends React.Component {
   }
 }
 
-export default Connexion;
+export default Inscription;

@@ -7,10 +7,15 @@ import Place from './Place';
 import Maintenance from './Maintenance';
 import Map from './GoogleMap';
 import Home from './Home';
+import AddPlace from './AddPlace';
+import Inscription from './Inscription';
 
 export default function Routes() {
   return (
     <Switch>
+      <Route path="/inscription">
+        <Inscription />
+      </Route>
       <Route path="/connexion">
         <Connexion />
       </Route>
@@ -28,6 +33,9 @@ export default function Routes() {
       </Route>
       <Route path="/places">
         <Places />
+      </Route>
+      <Route path="/addplace">
+        <AddPlace />
       </Route>
       <Route path="/">
         <Home />
