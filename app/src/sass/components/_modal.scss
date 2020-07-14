@@ -24,17 +24,33 @@
     overflow-y: scroll;
 
     @include media(tablet) {
+      width: 55vw;
+    }
+
+    @include media(desktop) {
       width: 45vw;
     }
 
     &_header {
       width: 100%;
       padding: 2.5%;
-      text-align: center;
+      display: flex;
       border-radius: 7.5px 7.5px 0 0;
       border-bottom: 1px solid grey;
       h1 {
+        text-align: center;
+        width: 92.5%;
         font-weight: 600;
+        padding-right: 7.5%;
+      }
+      button {
+        text-align: center;
+        border-radius: 50px;
+        width: 7.5%;
+        font-weight: 300;
+        &:hover {
+          background-color: rgb(233, 233, 233);
+        }
       }
     }
 

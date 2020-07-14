@@ -34,6 +34,9 @@ export default function ModalSignup() {
         <Fade in={open}>
           <div className="Modal_container">
             <div className="Modal_container_header">
+              <button className="Modal_button" type="button" onClick={handleClose}>
+                X
+              </button>
               <h1>Inscription</h1>
             </div>
             <form className="Modal_container_form">
@@ -43,14 +46,12 @@ export default function ModalSignup() {
               <input type="password" name="password" id="password" placeholder="Mot de passe" />
               <div className="Modal_container_radio">
                 <div className="Modal_container_radio_button">
-                  <label htmlFor="host">Hôte</label>
                   <input type="radio" name="role" id="host" checked />
+                  <label htmlFor="host">Hôte</label>
                 </div>
                 <div className="Modal_container_radio_button">
-                  <label htmlFor="tourist">
-                    <span>Touriste</span>
-                  </label>
                   <input type="radio" name="role" id="tourist" />
+                  <label htmlFor="tourist">Touriste</label>
                 </div>
               </div>
               <p>

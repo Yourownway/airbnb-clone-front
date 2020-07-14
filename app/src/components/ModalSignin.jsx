@@ -32,6 +32,9 @@ export default function ModalSignin() {
         <Fade in={open}>
           <div className="Modal_container">
             <div className="Modal_container_header">
+              <button className="Modal_button" type="button" onClick={handleClose}>
+                X
+              </button>
               <h1>Connexion</h1>
             </div>
             <form className="Modal_container_form">
