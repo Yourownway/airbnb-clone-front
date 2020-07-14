@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { Modal, Backdrop, Fade } from '@material-ui/core/';
+import axios from 'axios';
 
 export default function ModalSignup() {
   const [open, setOpen] = useState(false);
@@ -12,6 +13,33 @@ export default function ModalSignup() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [user, setUser] = useState({
+    role: 'host',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post('/api/signup', user)
+      .then((res) => {
+        console.log('this is the res', user);
+      })
+      .catch((error) => {
+        console.log('this is not workind dude', error);
+      });
   };
 
   return (
@@ -39,21 +67,47 @@ export default function ModalSignup() {
               </button>
               <h1>Inscription</h1>
             </div>
-            <form className="Modal_container_form">
-              <input type="text" name="firstName" id="firstName" placeholder="Nom" />
-              <input type="text" name="lastName" id="lastName" placeholder="Prénom" />
-              <input type="email" name="email" id="email" placeholder="Email" />
-              <input type="password" name="password" id="password" placeholder="Mot de passe" />
-              <div className="Modal_container_radio">
-                <div className="Modal_container_radio_button">
-                  <input type="radio" name="role" id="host" checked />
-                  <label htmlFor="host">Hôte</label>
-                </div>
-                <div className="Modal_container_radio_button">
-                  <input type="radio" name="role" id="tourist" />
-                  <label htmlFor="tourist">Touriste</label>
-                </div>
-              </div>
+            <form className="Modal_container_form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                placeholder="Prénom"
+                value={user.firstName}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Nom"
+                value={user.lastName}
+                onChange={handleChange}
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={user.email}
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Mot de passe"
+                value={user.password}
+                onChange={handleChange}
+              />
+              <select name="role" id="role" value={user.role} onChange={handleChange}>
+                <option value="host" onChange={handleChange}>
+                  Hôte
+                </option>
+                <option value="tourist" onChange={handleChange}>
+                  Voyageur
+                </option>
+              </select>
               <p>
                 Nous vous appellerons ou vous enverrons un SMS pour confirmer votre numéro. Les
                 frais standards d'envoi de messages et d'échange de données s'appliquent.
