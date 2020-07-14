@@ -42,12 +42,12 @@ export default function Nav() {
         </div>
 
         <div className="Nav_noSmartphone">
-          <Link to="/maintenance">
+          <Link to="/addPlace">
             <h3>Héberger des voyageurs</h3>
           </Link>
         </div>
         <div className="Nav_noSmartphone">
-          <Link to="/maintenance">
+          <Link to="/addPlace">
             <h3>Créer une expérience</h3>
           </Link>
         </div>

@@ -30,12 +30,19 @@ export default function ModalSignup() {
       [name]: value,
     });
   };
+
+  const message = () => {
+    // eslint-disable-next-line no-alert
+    alert('Tu es bien inscrit !');
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post('/api/signup', user)
       .then((res) => {
         console.log('this is the res', user);
+        message();
       })
       .catch((error) => {
         console.log('this is not workind dude', error);

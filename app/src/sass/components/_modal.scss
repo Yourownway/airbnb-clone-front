@@ -83,26 +83,25 @@
       }
     }
 
-    &_radio {
+    select {
       width: 100%;
       font-size: 13px;
       color: grey;
-      display: flex;
-      &_button {
-        padding: 12px 17px;
+      padding: 15px;
+      border: 1px solid grey;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 2px;
+
+      option {
+        width: 100%;
+        font-size: 13px;
+        color: grey;
+        padding: 15px;
         border: 1px solid grey;
-        width: 50%;
-        display: flex;
         align-items: center;
-        justify-content: space-between;
-        label {
-          cursor: pointer;
-          text-align: center;
-        }
-        input[type='radio'] {
-          opacity: 0.1;
-          cursor: pointer;
-        }
+        cursor: pointer;
+        border-radius: 2px;
       }
     }
   }

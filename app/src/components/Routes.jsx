@@ -6,10 +6,14 @@ import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
 import Home from './Home';
+import AddPlace from './AddPlace';
 
 export default function Routes() {
   return (
     <Switch>
+      <Route path="/addPlace">
+        <AddPlace />
+      </Route>
       <Route path="/enregistres">
         <Enregistres />
       </Route>
