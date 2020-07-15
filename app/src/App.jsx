@@ -22,14 +22,14 @@ const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        token: action.payload.token,
+        token: action.payload.data.token,
       };
     case 'LOGOUT':
       localStorage.clear();
       return {
         ...state,
         isAuthenticated: false,
-        user: null,
+        token: null,
       };
     default:
       return state;
@@ -40,12 +40,6 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [recherche, setRecherche] = useState('');
 
-  console.log('initialState : ', initialState);
-  console.log('reducer : ', reducer);
-  console.log('state : ', state);
-  console.log('dispatch :', dispatch);
-  console.log('localStorage :', localStorage);
-
   const contextValue = {
     recherche,
     setRecherche,
@@ -55,6 +49,7 @@ export default function App() {
     state,
     dispatch,
   };
+
   return (
     <Router>
       <ContextAuth.Provider value={contextAuth}>

@@ -15,8 +15,8 @@ export default function ModalSignin() {
     setOpen(false);
   };
 
-  console.log(connexion.isSubmitting);
-  if (!connexion.isSubmitting) {
+  console.log('Console.log de connexion.isSubmitting : ', connexion.isSubmitting);
+  if (connexion.email !== null && connexion.password !== null && !connexion.isSubmitting) {
     return (
       <div>
         <button className="Modal_button" type="button" onClick={handleOpen}>

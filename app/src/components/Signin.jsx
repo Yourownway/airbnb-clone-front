@@ -4,13 +4,14 @@ import axios from 'axios';
 import ContextAuth from './ContextAuth';
 
 export default function Signin() {
-  const { dispatch } = useContext(ContextAuth);
-  const [connexion, setConnexion] = useState({
+  const initialState = {
     email: '',
     password: '',
     isSubmitting: false,
     errorMessage: null,
-  });
+  };
+
+  const [connexion, setConnexion] = useState(initialState);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -19,6 +20,8 @@ export default function Signin() {
       [name]: value,
     });
   };
+
+  const { dispatch } = useContext(ContextAuth);
 
   const handleSubmit = async (event) => {
     try {
@@ -29,19 +32,15 @@ export default function Signin() {
         errorMessage: null,
       });
       const res = await axios.post('/api/signin', connexion);
-      dispatch({ type: 'LOGIN' });
-      console.log('dispatch 2 : ', dispatch);
-      console.log('Console.log de res : ', res);
-      // console.log('Console.log de res.data.token : ', res.data.token);
-      // console.log('Console.log de res.data : ', res.data);
+      if (res.status === 200) {
+        return dispatch({ type: 'LOGIN', payload: res });
+      }
     } catch (error) {
       setConnexion({
         ...connexion,
         isSubmitting: false,
         errorMessage: error.message || error.statusText,
       });
-      // console.log('error.message : ', error.message);
-      // console.log('error.statusText : ', error.statusText);
     }
   };
 
