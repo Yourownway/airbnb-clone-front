@@ -4,14 +4,12 @@ import axios from 'axios';
 import ContextAuth from './ContextAuth';
 
 export default function Signin() {
-  const initialState = {
+  const [connexion, setConnexion] = useState({
     email: '',
     password: '',
     isSubmitting: false,
     errorMessage: null,
-  };
-
-  const [connexion, setConnexion] = useState(initialState);
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
