@@ -4,19 +4,16 @@ html {
 }
 
 .container {
-  width: 100vw;
-  padding: 4%;
-  display: flex;
-  flex-direction: column;
+  margin: 12vh 4% 0;
 
   @include media(tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 22vh 1% 0;
+    margin: 22vh 1% 0vh;
+    min-height: 100vh;
   }
+
   @include media(desktop) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 24vh 1% 0;
+    width: 65vw;
+    min-height: 100vh;
+    margin: 24vh 1% 14vh;
   }
 }

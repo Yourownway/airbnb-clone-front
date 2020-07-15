@@ -29,9 +29,17 @@ const Search = (props) => {
         type="search"
         placeholder="Où allez-vous ?"
       />
-      <input type="date" placeholder="Date d'arrivée        " />
-      <input type="date" placeholder="Date de départ        " />
-      <input type="number" placeholder="Ajoutez des voyageurs" />
+      <input
+        type="date"
+        min={new Date().toISOString().split('T')[0]}
+        placeholder="Date d'arrivée        "
+      />
+      <input
+        type="date"
+        min={new Date().toISOString().split('T')[0]}
+        placeholder="Date de départ        "
+      />
+      <input type="number" placeholder="Ajoutez des voyageurs" min="0" max="10" />
       <input onClick={callSearchFunction} type="submit" value="Rechercher" />
     </form>
   );

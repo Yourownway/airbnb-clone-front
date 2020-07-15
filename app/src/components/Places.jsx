@@ -21,7 +21,7 @@ export default function Places() {
 
   return (
     <>
-      <div className="containerPlaces">
+      <div className="container">
         {places.map((place, i) => (
           <div key={i} className="places">
             <Link className="places_link" to={`/places/${place.id}`}>

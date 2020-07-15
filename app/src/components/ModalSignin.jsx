@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { Modal, Backdrop, Fade } from '@material-ui/core/';
-import axios from 'axios';
+import Signin from './Signin';
 
 export default function ModalSignin() {
+  const { connexion, handleChange, handleSubmit } = Signin();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -13,46 +14,6 @@ export default function ModalSignin() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const [connexion, setConnexion] = useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setConnexion({
-      ...connexion,
-      [name]: value,
-    });
-  };
-
-  const message = () => {
-    // eslint-disable-next-line no-alert
-    alert('Tu es bien connecté !');
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await axios.post('/api/signin', connexion);
-    message();
-  };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   axios
-  //     .post('/api/signin', connexion)
-  //     .then((res) => {
-  //       console.log('this is the res', connexion);
-  //       console.log('this is the data', res.data.token);
-  //       message();
-  //       on;
-  //     })
-  //     .catch((error) => {
-  //       console.log('this is not workind dude', error);
-  //     });
-  // };
 
   return (
     <div>
