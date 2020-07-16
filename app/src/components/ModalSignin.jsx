@@ -15,7 +15,6 @@ export default function ModalSignin() {
     setOpen(false);
   };
 
-  console.log('Console.log de connexion.isSubmitting : ', connexion.isSubmitting);
   if (connexion.email !== null && connexion.password !== null && !connexion.isSubmitting) {
     return (
       <div>
@@ -49,6 +48,7 @@ export default function ModalSignin() {
                   placeholder="Email"
                   value={connexion.email}
                   onChange={handleChange}
+                  required
                 />
                 <input
                   type="password"
@@ -57,6 +57,7 @@ export default function ModalSignin() {
                   placeholder="Mot de passe"
                   value={connexion.password}
                   onChange={handleChange}
+                  required
                 />
                 <p>
                   Nous vous appellerons ou vous enverrons un SMS pour confirmer votre numéro. Les
@@ -65,9 +66,6 @@ export default function ModalSignin() {
                 <button type="submit" disabled={connexion.isSubmitting}>
                   Continuer
                 </button>
-
-                {/* <span>{connexion.isSubmitting ? 'Bravo tu es connecté !' : ' '}</span> */}
-
                 {connexion.errorMessage && <span>{connexion.errorMessage}</span>}
               </form>
             </div>
@@ -86,22 +84,26 @@ export default function ModalSignin() {
         onClose={handleClose}
         aria-labelledby="Modale de connexion"
         aria-describedby="Cette modale vous permet de vous connecter"
-        className="Modal"
+        className="Modal_succes"
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 1000,
         }}
       >
         <Fade in={open}>
-          <div className="Modal_container">
+          <div className="Modal_succes_container">
             <div className="Modal_container_header">
               <button className="Modal_button" type="button" onClick={handleClose}>
                 X
               </button>
-              <h1>Connexion</h1>
+              <h1>Bienvenu (firstName)</h1>
             </div>
-            <h2>Tu as réussi à te connecter !</h2>
-            <button type="submit">Retour à l'accueil</button>
+            <div className="Modal_succes_container_message">
+              <img src="defaultProfil.jpg" alt="" />
+              <h2>
+                Ce n'est pas vous ? <b>Utiliser un autre compte</b>
+              </h2>
+            </div>
           </div>
         </Fade>
       </Modal>

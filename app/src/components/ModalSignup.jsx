@@ -55,6 +55,7 @@ export default function ModalSignup() {
                     placeholder="Prénom"
                     value={firstName}
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="text"
@@ -63,6 +64,7 @@ export default function ModalSignup() {
                     placeholder="Nom"
                     value={lastName}
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="email"
@@ -71,6 +73,7 @@ export default function ModalSignup() {
                     placeholder="Email"
                     value={email}
                     onChange={handleChange}
+                    required
                   />
                   <input
                     type="password"
@@ -79,6 +82,7 @@ export default function ModalSignup() {
                     placeholder="Mot de passe"
                     value={password}
                     onChange={handleChange}
+                    required
                   />
                   <select name="role" id="role" value={role} onChange={handleChange}>
                     <option value="host" onChange={handleChange}>

@@ -30,5 +30,5 @@ export default function Signup() {
     console.log(user);
   };
 
-  return { handleSubmit, handleChange, user };
+  return { handleSubmit, handleChange, user, setUser };
 }

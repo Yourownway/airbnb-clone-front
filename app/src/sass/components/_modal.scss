@@ -17,6 +17,7 @@
   }
 
   &_container {
+    position: relative;
     background: #fff;
     width: 90vw;
     height: 90vh;
@@ -32,6 +33,8 @@
     }
 
     &_header {
+      background-color: white;
+      position: absolute;
       width: 100%;
       padding: 2.5%;
       display: flex;
@@ -56,7 +59,7 @@
 
     &_form {
       display: column;
-      padding: 7.5% 5%;
+      padding: 17.5% 5%;
 
       input {
         width: 100%;
@@ -102,6 +105,54 @@
         align-items: center;
         cursor: pointer;
         border-radius: 2px;
+      }
+    }
+  }
+
+  &_succes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_container {
+      position: relative;
+      background: #fff;
+      width: 90vw;
+      height: 90vh;
+      border-radius: 10px;
+      overflow-y: scroll;
+
+      @include media(tablet) {
+        width: 55vw;
+        height: 60vh;
+      }
+
+      @include media(desktop) {
+        width: 45vw;
+        height: 60vh;
+      }
+
+      &_message {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 10%;
+        }
+        h2 {
+          position: absolute;
+          bottom: 0;
+          font-size: 14px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
       }
     }
   }
