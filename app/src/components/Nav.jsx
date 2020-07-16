@@ -40,6 +40,10 @@ export default function Nav() {
     );
   };
 
+  const Logout = () => {
+    return dispatch({ type: 'LOGOUT' });
+  };
+
   const Switch = () => {
     if (state.isAuthenticated === false) {
       return <InscriptioConnexion />;
@@ -53,10 +57,6 @@ export default function Nav() {
 
   const search = (searchValue) => {
     context.setRecherche(searchValue);
-  };
-
-  const Logout = () => {
-    return dispatch({ type: 'LOGOUT' });
   };
 
   return (
@@ -74,18 +74,15 @@ export default function Nav() {
         </div>
 
         <div className="Nav_link">
-          <Link to="/enregistres">
+          <Link to="/maintenance">
             <img src="heart.png" alt="" />
             <h3>Enregistrés</h3>
           </Link>
         </div>
 
         <div className="Nav_link">
-          <Link to="/connexion">
-            <img src="user.png" alt="" />
-            <h3>Connexion</h3>
-          </Link>
-          {/* <ModalSignup /> */}
+          <img src="user.png" alt="" />
+          <ModalSignin />
         </div>
 
         <div className="Nav_noSmartphone">
@@ -103,12 +100,6 @@ export default function Nav() {
             <h3>Aide</h3>
           </Link>
         </div>
-        {/* <div className="Nav_noSmartphone">
-          <ModalSignin />
-        </div>
-        <div className="Nav_noSmartphone Nav_noSmartphone_inscriptionBtn">
-          <ModalSignup />
-        </div> */}
         <Switch />
       </div>
       <Search search={search} />

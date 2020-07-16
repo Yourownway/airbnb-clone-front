@@ -1,19 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Modal, Backdrop, Fade } from '@material-ui/core/';
 import Signin from './Signin';
-import contextAuth from './ContextAuth';
 
 export default function ModalSignin() {
   const { connexion, handleChange, handleSubmit } = Signin();
   const [open, setOpen] = useState(false);
-
-  const { state } = useContext(contextAuth);
-
-  useEffect(() => {
-    console.log('Console.log de state', state);
-    return () => {};
-  }, [state]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -24,7 +16,6 @@ export default function ModalSignin() {
   };
 
   console.log('isSubmitting : ', connexion.isSubmitting);
-  // if (connexion.email !== null && connexion.password !== null && !connexion.isSubmitting) {
   return (
     <div>
       <button className="Modal_button" type="button" onClick={handleOpen}>
@@ -83,39 +74,3 @@ export default function ModalSignin() {
     </div>
   );
 }
-// return (
-//   <div>
-//     <button className="Modal_button" type="button" onClick={handleOpen}>
-//       Connexion
-//     </button>
-//     <Modal
-//       open={open}
-//       onClose={handleClose}
-//       aria-labelledby="Modale de connexion"
-//       aria-describedby="Cette modale vous permet de vous connecter"
-//       className="Modal_succes"
-//       BackdropComponent={Backdrop}
-//       BackdropProps={{
-//         timeout: 1000,
-//       }}
-//     >
-//       <Fade in={open}>
-//         <div className="Modal_succes_container">
-//           <div className="Modal_container_header">
-//             <button className="Modal_button" type="button" onClick={handleClose}>
-//               X
-//             </button>
-//             <h1>Bienvenu {state.user && state.user.firstName}</h1>
-//           </div>
-//           <div className="Modal_succes_container_message">
-//             <img src="defaultProfil.jpg" alt="" />
-//             <h2>
-//               Ce n'est pas vous ?<b>Utiliser un autre compte</b>
-//             </h2>
-//           </div>
-//         </div>
-//       </Fade>
-//     </Modal>
-//   </div>
-// );
-// }
