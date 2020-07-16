@@ -5,15 +5,15 @@ import axios from 'axios';
 
 export default function AddPlace() {
   const [addPlace, setAddPlace] = useState({
-    cityId: '6',
+    cityId: parseInt('1'),
     name: 'Belle apprtement',
     photos:
       'https://a0.muscache.com/im/pictures/2f43547d-3f6f-4a26-97a7-d2b319a536f8.jpg?im_w=1920',
     description: 'Belle appartement !',
-    rooms: '1',
-    bathrooms: '1',
-    maxGuests: '1',
-    priceByNight: '100',
+    rooms: parseInt('1'),
+    bathrooms: parseInt('1'),
+    maxGuests: parseInt('1'),
+    priceByNight: parseInt('1'),
     user: 'host',
   });
 
@@ -55,8 +55,9 @@ export default function AddPlace() {
 
   return (
     <div className="container">
-      <form className="addPlace" action="POST">
-        <label htmlFor="cityID">ville</label>
+      <form className="Modal_container_form" action="POST">
+        <h1>Ajouter un appartement !</h1>
+        <label htmlFor="cityId">ville</label>
         <select name="cityId" id="cityId" value={addPlace.cityId} onChange={handleChange}>
           <option value="1">Paris</option>
           <option value="2">Dijon</option>
@@ -74,8 +75,10 @@ export default function AddPlace() {
           <option value="14">Brest</option>
           <option value="15">Metz</option>
         </select>
+
         <label htmlFor="name">Titre de l'annonce</label>
         <input type="text" id="name" name="name" value={addPlace.name} onChange={handleChange} />
+
         <label htmlFor="photos">Photo principale</label>
         <input
           type="text"
@@ -84,6 +87,7 @@ export default function AddPlace() {
           value={addPlace.photos}
           onChange={handleChange}
         />
+
         <label htmlFor="description">Description du logement</label>
         <input
           type="text"
@@ -101,6 +105,7 @@ export default function AddPlace() {
           value={addPlace.rooms}
           onChange={handleChange}
         />
+
         <label htmlFor="bathrooms">Nombre de salle de bain</label>
         <input
           type="number"
@@ -109,6 +114,7 @@ export default function AddPlace() {
           value={addPlace.bathrooms}
           onChange={handleChange}
         />
+
         <label htmlFor="maxGuests">Nombre de voyageur</label>
         <input
           type="number"
@@ -117,6 +123,7 @@ export default function AddPlace() {
           value={addPlace.maxGuests}
           onChange={handleChange}
         />
+
         <label htmlFor="priceByNight">Prix par nuit</label>
         <input
           type="number"
@@ -125,6 +132,7 @@ export default function AddPlace() {
           value={addPlace.priceByNight}
           onChange={handleChange}
         />
+
         <label htmlFor="user">User</label>
         <input type="text" id="user" name="user" value={addPlace.user} onChange={handleChange} />
 
