@@ -28,15 +28,12 @@ export default function Nav() {
     );
   };
 
-  // Permet l'affichage du bouton Profil
-  const ProfilUser = () => {
+  const ConnexionMobile = () => {
     return (
-      <div className="Nav_noSmartphone Nav_noSmartphone_profil ">
-        <button type="button" onClick={Logout}>
-          <h3>{state.user && state.user.firstName}</h3>
-          <img src="defaultProfil.jpg" alt="Utilisateur" />
-        </button>
-      </div>
+      <>
+        <img src="user.png" alt="" />
+        <ModalSignin />
+      </>
     );
   };
 
@@ -44,11 +41,40 @@ export default function Nav() {
     return dispatch({ type: 'LOGOUT' });
   };
 
-  const Switch = () => {
+  // Permet l'affichage du bouton Profil
+  const ProfilUser = () => {
+    return (
+      <button type="button" onClick={Logout}>
+        <h3>{state.user && state.user.firstName}</h3>
+        <img src="defaultProfil.jpg" alt="Utilisateur" />
+      </button>
+    );
+  };
+
+  const SwitchDesktop = () => {
     if (state.isAuthenticated === false) {
       return <InscriptioConnexion />;
     }
-    return <ProfilUser />;
+    return (
+      <div className="Nav_noSmartphone Nav_noSmartphone_profil ">
+        <ProfilUser />
+      </div>
+    );
+  };
+
+  const SwitchMobile = () => {
+    if (state.isAuthenticated === false) {
+      return (
+        <div className="Nav_link" id="connexion">
+          <ConnexionMobile />
+        </div>
+      );
+    }
+    return (
+      <div className="Nav_link Nav_link_profil">
+        <ProfilUser />
+      </div>
+    );
   };
 
   console.log('isAuthenticated : ', state.isAuthenticated);
@@ -80,27 +106,27 @@ export default function Nav() {
           </Link>
         </div>
 
-        <div className="Nav_link">
-          <img src="user.png" alt="" />
-          <ModalSignin />
-        </div>
+        <SwitchMobile />
 
         <div className="Nav_noSmartphone">
           <Link to="/addPlace">
             <h3>Héberger des voyageurs</h3>
           </Link>
         </div>
+
         <div className="Nav_noSmartphone">
           <Link to="/addPlace">
             <h3>Créer une expérience</h3>
           </Link>
         </div>
+
         <div className="Nav_noSmartphone">
           <Link to="/places" onClick={() => context.setRecherche('')}>
             <h3>Aide</h3>
           </Link>
         </div>
-        <Switch />
+
+        <SwitchDesktop />
       </div>
       <Search search={search} />
     </nav>

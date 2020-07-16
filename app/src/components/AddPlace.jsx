@@ -5,14 +5,16 @@ import axios from 'axios';
 
 export default function AddPlace() {
   const [addPlace, setAddPlace] = useState({
-    cityId: '4',
-    name: 'dsd',
-    photos: 'fds',
-    description: 'fsd',
+    cityId: '6',
+    name: 'Belle apprtement',
+    photos:
+      'https://a0.muscache.com/im/pictures/2f43547d-3f6f-4a26-97a7-d2b319a536f8.jpg?im_w=1920',
+    description: 'Belle appartement !',
     rooms: '1',
     bathrooms: '1',
     maxGuests: '1',
     priceByNight: '100',
+    user: 'host',
   });
 
   const handleChange = (event) => {
@@ -23,37 +25,37 @@ export default function AddPlace() {
     });
   };
 
-  const handleSubmit = (event) => {
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const token = localStorage.getItem('token');
+  //   console.log('TOKEN -------------- ', token);
+  //   const res = await axios.post('/api/places/', {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //     addPlace,
+  //   });
+  //   console.log('RES ----------- ', res);
+  // };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // const headers = {
-    //   'Content-Type': 'application/json',
-    //   Authorization:
-    //     'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJSb2xlIjoiaG9zdCIsImlhdCI6MTU5NDcyNDE2MSwiZXhwIjoxNTk0NzI3NzYxfQ.K4zyuTGM_pfwpkvDERES8jaISFMcFTgSdIjbu6qzznc',
-    //   Accept: 'application/json',
-    // };
-
-    axios
-      .post(
-        '/api/places/',
-        // {
-        //   headers: headers,
-        // },
-        addPlace
-      )
-      .then((res) => {
-        console.log('this is the addplace', addPlace);
-      })
-      .catch((error) => {
-        console.log('this is not workind dude', error);
-      });
+    const token = localStorage.getItem('token');
+    await axios({
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      url: '/api/places',
+      data: addPlace,
+    });
   };
+
   return (
     <div className="container">
-      <h2>Ajouter une annonce pour commencer à gagner de l'argent</h2>
-      <p>Une fois l'annonce publiées, vous pourrez la modifer à tout moment.</p>
-
-      <form className="addPlace" action="POST" onSubmit={handleSubmit}>
+      <form className="addPlace" action="POST">
         <label htmlFor="cityID">ville</label>
         <select name="cityId" id="cityId" value={addPlace.cityId} onChange={handleChange}>
           <option value="1">Paris</option>
@@ -83,14 +85,14 @@ export default function AddPlace() {
           onChange={handleChange}
         />
         <label htmlFor="description">Description du logement</label>
-        <textarea
+        <input
+          type="text"
           name="description"
           id="description"
-          cols="30"
-          rows="10"
           value={addPlace.description}
           onChange={handleChange}
-        ></textarea>
+        />
+
         <label htmlFor="rooms">Nombre de chambres</label>
         <input
           type="number"
@@ -123,7 +125,12 @@ export default function AddPlace() {
           value={addPlace.priceByNight}
           onChange={handleChange}
         />
-        <input type="submit" value="Envoyer" id="btn" />
+        <label htmlFor="user">User</label>
+        <input type="text" id="user" name="user" value={addPlace.user} onChange={handleChange} />
+
+        <button type="submit" value="Envoyer" id="btn" onClick={handleSubmit}>
+          Envoyer
+        </button>
         {JSON.stringify(addPlace)}
       </form>
       <Link to="/">

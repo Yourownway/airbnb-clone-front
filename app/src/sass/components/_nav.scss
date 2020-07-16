@@ -143,6 +143,26 @@
       height: 3vh;
       opacity: 0.6;
     }
+
+    &_profil {
+      button {
+        display: flex;
+        flex-direction: column-reverse;
+        border: none;
+        background-color: inherit;
+
+        img {
+          border-radius: 100%;
+          opacity: 1;
+        }
+
+        h3 {
+          padding-top: 1.3vh;
+          color: rgb(85, 85, 85);
+          font-family: inherit;
+        }
+      }
+    }
   }
 
   &_noSmartphone {
