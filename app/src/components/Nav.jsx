@@ -38,7 +38,7 @@ export default function Nav() {
             <img src="user.png" alt="" />
             <h3>Connexion</h3>
           </Link>
-          {/* <ModalSignin /> */}
+          {/* <ModalSignup /> */}
         </div>
 
         <div className="Nav_noSmartphone">

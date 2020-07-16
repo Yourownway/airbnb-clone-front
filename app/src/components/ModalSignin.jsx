@@ -101,7 +101,7 @@ export default function ModalSignin() {
             <div className="Modal_succes_container_message">
               <img src="defaultProfil.jpg" alt="" />
               <h2>
-                Ce n'est pas vous ? <b>Utiliser un autre compte</b>
+                Ce n'est pas vous ?<b>Utiliser un autre compte</b>
               </h2>
             </div>
           </div>
