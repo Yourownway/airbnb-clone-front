@@ -1,11 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Modal, Backdrop, Fade } from '@material-ui/core/';
 import Signin from './Signin';
+import contextAuth from './ContextAuth';
 
 export default function ModalSignin() {
   const { connexion, handleChange, handleSubmit } = Signin();
   const [open, setOpen] = useState(false);
+
+  const { state } = useContext(contextAuth);
+
+  useEffect(() => {
+    console.log(state);
+    return () => {};
+  }, [state]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -96,7 +104,7 @@ export default function ModalSignin() {
               <button className="Modal_button" type="button" onClick={handleClose}>
                 X
               </button>
-              <h1>Bienvenu (firstName)</h1>
+              <h1>Bienvenu {state.user && state.user.firstName}</h1>
             </div>
             <div className="Modal_succes_container_message">
               <img src="defaultProfil.jpg" alt="" />
