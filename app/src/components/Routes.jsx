@@ -1,21 +1,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // import Connexion from './Connexion';
-import Enregistres from './Enregistres';
 import Places from './Places';
 import Place from './Place';
 import Maintenance from './Maintenance';
-import Home from './Home';
 import AddPlace from './AddPlace';
+import Profil from './Profil';
+import Home from './Home';
 
 export default function Routes() {
   return (
     <Switch>
       <Route path="/addPlace">
         <AddPlace />
-      </Route>
-      <Route path="/enregistres">
-        <Enregistres />
       </Route>
       <Route path="/places/:id">
         <Place />
@@ -25,6 +22,9 @@ export default function Routes() {
       </Route>
       <Route path="/maintenance">
         <Maintenance />
+      </Route>
+      <Route path="/profil">
+        <Profil />
       </Route>
       <Route path="/">
         <Home />

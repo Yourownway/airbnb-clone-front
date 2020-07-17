@@ -1,4 +1,88 @@
 .addPlace {
-  display: flex;
-  flex-direction: column;
+  &_container {
+    margin: 6vh 4% 0;
+    max-height: 160vh;
+
+    @include media(tablet) {
+      width: 100%;
+      margin: 22vh 0 2vh;
+      max-height: 78vh;
+      background-image: url('https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=n:ope,e:fwebp-c75');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: royalblue;
+      overflow: scroll;
+    }
+    &_form {
+      padding: 30px;
+      display: column;
+      width: 100%;
+      overflow: scroll;
+
+      @include media(tablet) {
+        border-radius: 10px;
+        width: 500px;
+        height: 400px;
+        margin: 70px;
+        background-color: #fff;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        line-height: 1.25;
+        font-size: 35px;
+        font-weight: 600;
+        padding: 0 25% 20px 0;
+      }
+
+      h2 {
+        font-size: 15px;
+        font-weight: 500;
+        padding-bottom: 20px;
+      }
+
+      button {
+        margin-top: 12px;
+        width: 100%;
+        padding: 12px;
+        background-color: #e31d5e;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        outline: none;
+      }
+
+      select {
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 13px;
+        color: black;
+        padding: 15px;
+        border: 1px solid grey;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 2px;
+
+        option {
+          width: 100%;
+          font-size: 13px;
+          color: grey;
+          padding: 15px;
+          border: 1px solid grey;
+          align-items: center;
+          cursor: pointer;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
 }

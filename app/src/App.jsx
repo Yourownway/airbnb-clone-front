@@ -8,10 +8,16 @@ import Footer from './components/Footer';
 import ContextRecherche from './components/Context';
 import ContextAuth from './components/ContextAuth';
 
+// const initialState = {
+//   isAuthenticated: false,
+//   user: null,
+//   token: null,
+// };
+
 const initialState = {
-  isAuthenticated: false,
-  user: null,
-  token: null,
+  isAuthenticated: !!localStorage.getItem('token'),
+  user: JSON.parse(localStorage.getItem('user')) || {},
+  token: localStorage.getItem('token') || {},
 };
 
 const reducer = (state, action) => {
@@ -19,10 +25,13 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
       localStorage.setItem('token', action.payload.data.token);
+      localStorage.setItem('user', JSON.stringify(action.payload.data.user));
+      console.log('User : ', action.payload.data.user);
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload.data.token,
+        user: action.payload.data.user,
       };
     case 'LOGOUT':
       localStorage.clear();
@@ -30,6 +39,7 @@ const reducer = (state, action) => {
         ...state,
         isAuthenticated: false,
         token: null,
+        user: null,
       };
     default:
       return state;

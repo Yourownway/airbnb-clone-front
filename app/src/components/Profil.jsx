@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Enregistres() {
+export default function Profil() {
   return (
     <div className="container">
-      <h1>Je suis la page Enregistres !</h1>
+      <h1>Je suis la page profil !</h1>
     </div>
   );
 }
