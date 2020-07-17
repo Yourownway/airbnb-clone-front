@@ -12,8 +12,8 @@ export default function AddPlace() {
     description: '',
     rooms: parseInt('0'),
     bathrooms: parseInt('0'),
-    maxGuests: parseInt('0'),
-    priceByNight: parseInt('0'),
+    maxGuests: parseInt('1'),
+    priceByNight: parseInt('1'),
     user: 'host',
   });
 
@@ -67,7 +67,14 @@ export default function AddPlace() {
           </select>
 
           <label htmlFor="name">Titre de l'annonce</label>
-          <input type="text" id="name" name="name" value={addPlace.name} onChange={handleChange} />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={addPlace.name}
+            onChange={handleChange}
+            required
+          />
 
           <label htmlFor="photos">Photo principale</label>
           <input
@@ -76,6 +83,7 @@ export default function AddPlace() {
             name="photos"
             value={addPlace.photos}
             onChange={handleChange}
+            required
           />
 
           <label htmlFor="description">Description du logement</label>
@@ -85,6 +93,7 @@ export default function AddPlace() {
             id="description"
             value={addPlace.description}
             onChange={handleChange}
+            required
           />
 
           <label htmlFor="rooms">Nombre de chambres</label>
@@ -94,6 +103,8 @@ export default function AddPlace() {
             name="rooms"
             value={addPlace.rooms}
             onChange={handleChange}
+            required
+            min="0"
           />
 
           <label htmlFor="bathrooms">Nombre de salle de bain</label>
@@ -103,6 +114,8 @@ export default function AddPlace() {
             name="bathrooms"
             value={addPlace.bathrooms}
             onChange={handleChange}
+            required
+            min="0"
           />
 
           <label htmlFor="maxGuests">Nombre de voyageur</label>
@@ -112,7 +125,8 @@ export default function AddPlace() {
             name="maxGuests"
             value={addPlace.maxGuests}
             onChange={handleChange}
-            placeholder="Coucou"
+            required
+            min="1"
           />
 
           <label htmlFor="priceByNight">Prix par nuit</label>
@@ -122,6 +136,8 @@ export default function AddPlace() {
             name="priceByNight"
             value={addPlace.priceByNight}
             onChange={handleChange}
+            required
+            min="1"
           />
 
           <label htmlFor="user">User</label>

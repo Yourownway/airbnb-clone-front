@@ -19,15 +19,9 @@ export default function Signup() {
     });
   };
 
-  const message = () => {
-    alert('Tu es bien inscrit !');
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     await axios.post('/api/signup', user);
-    message();
-    console.log(user);
   };
 
   return { handleSubmit, handleChange, user, setUser };
