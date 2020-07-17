@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function AddPlace() {
   const [addPlace, setAddPlace] = useState({
@@ -24,6 +25,7 @@ export default function AddPlace() {
     });
   };
 
+  const history = useHistory();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
@@ -36,6 +38,7 @@ export default function AddPlace() {
       url: '/api/places',
       data: addPlace,
     });
+    history.push('/places');
   };
 
   return (
